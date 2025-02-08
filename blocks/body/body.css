@@ -4,3 +4,20 @@ body {
   padding: 0;
   background-color: #f9f9f9;
 }
+/* Добавить медиа-запросы */
+@media (max-width: 767px) {
+    .jarallax {
+        min-height: 60vh !important;
+        height: auto !important;
+    }
+    
+    .mbr-fullscreen {
+        min-height: 60vh !important;
+    }
+    
+    .jarallax-img {
+        object-fit: cover !important;
+        width: 100% !important;
+        height: 60vh !important;
+    }
+}

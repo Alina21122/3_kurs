@@ -118,9 +118,9 @@
   <div class="container-fluid">
     <div class="row">
       <div class="content-wrap col-12 col-md-10">
-        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+        <h2 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
           <strong>Вкусная Атмосфера</strong>
-        </h1>
+        </h2>
         <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Погрузитесь в мир гастрономического наслаждения и веселья!</p>
       </div>
     </div>
@@ -144,26 +144,85 @@
   </div>
 </div>
 
+<!-- Добавляем модальное окно галереи -->
+<div id="galleryModal" class="gallery-modal">
+  <span class="close">&times;</span>
+  <div class="modal-content">
+      <div class="gallery-slide active">
+          <img class="modal-image" src="#" alt="Our_photo">
+      </div>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+      <div class="caption-container">
+          <p id="caption"></p>
+      </div>
+  </div>
+</div>
+
 
 <script>
-  // Modal functionality
-  const modal = document.getElementById('booking-modal');
-  const openModalBtn = document.getElementById('open-modal');
-  const closeModalBtn = document.getElementById('close-modal');
+  // Gallery Modal functionality
+  const galleryModal = document.getElementById('galleryModal');
+  const modalClose = galleryModal.querySelector('.close');
+  const modalImage = galleryModal.querySelector('.modal-image');
+  const prevButton = galleryModal.querySelector('.prev');
+  const nextButton = galleryModal.querySelector('.next');
+  const captionText = document.getElementById('caption');
+  
+  let currentImageIndex = 0;
+  let images = [];
 
-  openModalBtn.addEventListener('click', () => {
-    modal.showModal();
+  // Инициализация галереи
+  document.querySelectorAll('.gallery-item img').forEach((img, index) => {
+      img.onclick = () => {
+          currentImageIndex = index;
+          images = Array.from(document.querySelectorAll('.gallery-item img'));
+          openGallery();
+      };
   });
 
-  closeModalBtn.addEventListener('click', () => {
-    modal.close();
-  });
+  function openGallery() {
+      galleryModal.style.display = "block";
+      updateImage();
+  }
 
-  // Close modal when clicking outside
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.close();
-    }
+  function closeGallery() {
+      galleryModal.style.display = "none";
+  }
+
+  function updateImage() {
+      modalImage.src = images[currentImageIndex].src;
+      captionText.textContent = images[currentImageIndex].alt;
+  }
+
+  function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      updateImage();
+  }
+
+  function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      updateImage();
+  }
+
+  // Обработчики событий
+  modalClose.onclick = closeGallery;
+  prevButton.onclick = prevImage;
+  nextButton.onclick = nextImage;
+
+  galleryModal.onclick = (event) => {
+      if (event.target === galleryModal) {
+          closeGallery();
+      }
+  };
+
+  // Обработка клавиатуры
+  document.addEventListener('keydown', (e) => {
+      if (galleryModal.style.display === "block") {
+          if (e.key === 'ArrowLeft') prevImage();
+          if (e.key === 'ArrowRight') nextImage();
+          if (e.key === 'Escape') closeGallery();
+      }
   });
 </script>
 
@@ -173,9 +232,9 @@
   <div class="container-fluid">
     <div class="row">
       <div class="content-wrap col-12 col-md-6">
-        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-2">
+        <h2 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-2">
           <strong>Забронируйте свой столик сейчас!</strong>
-        </h1>
+        </h2>
         <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">
           Не упустите шанс насладиться нашими блюдами!
         </p>

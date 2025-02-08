@@ -4,6 +4,12 @@
  * Author  : nK <https://nkdev.info>
  * GitHub  : https://github.com/nk-o/jarallax
  */
+// В начале файла найти инициализацию плагина и добавить:
+if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    Jarallax.prototype.options.speed = 0.6; // Уменьшаем скорость для мобилок
+    Jarallax.prototype.options.imgSize = 'cover';
+    Jarallax.prototype.options.keepImg = true;
+}
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

@@ -202,6 +202,17 @@
   <script src="scripti.js"></script>
   <script src="formoid.min.js"></script>
   <script src="preview.js"></script>
- 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Jarallax !== 'undefined') {
+        jarallax(document.querySelectorAll('.jarallax'), {
+            disableParallax: /iPad|iPhone|iPod|Android/, 
+            disableVideo: true
+        });
+    }
+});
+</script>
+
+  
 </body>
 </html>

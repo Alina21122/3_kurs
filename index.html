@@ -29,63 +29,59 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap"></noscript>
   
-  <link rel="stylesheet" href="styles.css">
- <style>
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            background: none;
-            border: none;
-        }
-        @media screen and (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: #fff;
-                position: absolute;
-                top: 50px;
-                left: 0;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
-        }
-    </style>
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
  <!-- Меню -->  
-   <header>
-        <nav class="navbar">
-            <div class="logo">Логотип</div>
-            <button class="menu-toggle">&#9776;</button>
-            <ul class="nav-links">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="Menu.html">Меню</a></li>
-                <li><a href="Contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h1>Добро пожаловать!</h1>
-            <p>Лучшие блюда для вас.</p>
-        </section>
-    </main>
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
+  <header class="menu cid-uxk8jD0frN">
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+      <div class="container">
+        <div class="navbar-brand">
+          <span class="navbar-logo">
+            <img src="images/logo.png" alt="logo" style="height: 4.3rem;">
+          </span>
+          <span class="navbar-caption-wrap">
+            <a class="navbar-caption text-black display-4" href="#">ВкуснаяАтмосфера</a>
+          </span>
+        </div>
+        <ul class="header-menu">
+          
+          <li class="header-menu-item mbr-fonts-style display-5">
+            <a href="Menu.html" class="text-white">Меню</a>
+          </li>
+          <li class="header-menu-item mbr-fonts-style display-5">
+            <a href="Booking.html" class="text-white">Бронирование</a>
+          </li>
+          <li class="header-menu-item mbr-fonts-style display-5">
+            <a href="Reviews.html" class="text-white">Отзывы</a>
+          </li>
+          <li class="header-menu-item mbr-fonts-style display-5">
+            <a href="News.html" class="text-white">Новости</a>
+          </li>
+          <li class="header-menu-item mbr-fonts-style display-5">
+            <a href="Contacts.html" class="text-white">Контакты</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+<!-- Начало главной странички -->
+<section class=" cid-uxk8jD0QWW mbr-fullscreen mbr-parallax-background" id="hero-17-uxk8jD0QWW">
+  <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(0, 0, 0);"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-wrap col-12 col-md-10">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+          <strong>Вкусная Атмосфера</strong>
+        </h1>
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Погрузитесь в мир гастрономического наслаждения и веселья!</p>
+      </div>
+    </div>
+  </div>
+</section>
   
 
 <!-- Начало главной странички -->

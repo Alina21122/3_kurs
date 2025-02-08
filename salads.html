@@ -23,7 +23,7 @@
     <div>
         <label for="minPrice">Мин. цена:</label>
         <input type="number" id="minPrice" placeholder="Например, 100">
-        
+        <p>
         <label for="maxPrice">Макс. цена:</label>
         <input type="number" id="maxPrice" placeholder="Например, 120">
         
@@ -32,7 +32,7 @@
     </fieldset>
 </div>
 
-    <section class="menu-container">
+    <div class="menu-container">
         <article class="menu-card" data-price="112">
             <figure>
                 <img src="images/Nautical.png" alt="Nautical">
@@ -70,7 +70,23 @@
             </div>
         </article>
         
-    </section>
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal">
+            <button class="close-modal">&times;</button>
+            <img class="modal-image" src="#" alt="Изображение блюда">
+            <div class="modal-content">
+                <h2 class="modal-title">название</h2>
+                <p class="modal-description"></p>
+                <p class="modal-details"></p>
+                <div class="modal-footer">
+                    <span class="modal-price"></span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

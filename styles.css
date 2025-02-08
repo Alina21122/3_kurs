@@ -43,6 +43,75 @@
 @import url(blocks/navbar/_brand/navbar_brand.css);
 @import url(blocks/navbar/_dropdown/navbar_dropdown.css);
 @import url(blocks/redirect/_button/redirect_button.css);
+@import url(blocks/gallery/gallery.css);
+
+/* Стили для модального окна */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+
+.modal-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.modal-content {
+  flex: 1;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 600px) {
+  .modal {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .modal-image {
+      width: 100%;
+      height: 150px;
+  }
+}
+.menu-card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
 
 
 :root{--background: #FFEEE6; --background-dark: #50250E; --dominant-color: #FB5607; --dominant-dark-color: #613029; --dominant-darken-color: #C01C00; --dominant-light-color: #D5C0B1; --dominant-lighten-color: #FF893F; --primary-color: #FFBE0B; --primary-dark-color: #522612; --primary-darken-color: #C78E00; --primary-light-color: #E5E0C8; --primary-lighten-color: #FFF051; --secondary-color: #8338EC; --secondary-dark-color: #3F3762; --secondary-darken-color: #4A00B8; --secondary-light-color: #E2D1E3; --secondary-lighten-color: #B969FF; --success-color: #22B571; --success-dark-color: #1F421F; --success-darken-color: #008445; --success-light-color: #D1E9DA; --success-lighten-color: #63E8A0; --danger-color: #B7202E; --danger-dark-color: #5C2C25; --danger-darken-color: #800006; --danger-light-color: #DEC2C0; --danger-lighten-color: #EF5857; --warning-color: #D7A100; --warning-dark-color: #51270C; --warning-darken-color: #A17300; --warning-light-color: #E8E2CA; --warning-lighten-color: #FFD247; --info-color: #0BACCC; --info-dark-color: #043E5A; --info-darken-color: #007C9B; --info-light-color: #CEEDED; --info-lighten-color: #61DEFF; --background-text: #000000; --background-dark-text: #FFFFFF; --dominant-text: #FFFFFF; --dominant-dark-text: #FFFFFF; --dominant-darken-text: #FFFFFF; --dominant-light-text: #000000; --dominant-lighten-text: #000000; --primary-text: #000000; --primary-dark-text: #FFFFFF; --primary-darken-text: #000000; --primary-light-text: #000000; --primary-lighten-text: #000000; --secondary-text: #FFFFFF; --secondary-dark-text: #FFFFFF; --secondary-darken-text: #FFFFFF; --secondary-light-text: #000000; --secondary-lighten-text: #000000; --success-text: #FFFFFF; --success-dark-text: #FFFFFF; --success-darken-text: #FFFFFF; --success-light-text: #000000; --success-lighten-text: #000000; --danger-text: #FFFFFF; --danger-dark-text: #FFFFFF; --danger-darken-text: #FFFFFF; --danger-light-text: #000000; --danger-lighten-text: #FFFFFF; --warning-text: #000000; --warning-dark-text: #FFFFFF; --warning-darken-text: #FFFFFF; --warning-light-text: #000000; --warning-lighten-text: #000000; --info-text: #FFFFFF; --info-dark-text: #FFFFFF; --info-darken-text: #FFFFFF; --info-light-text: #000000; --info-lighten-text: #000000;  --display1-font: 'Golos Text', sans-serif; --display2-font: 'Golos Text', sans-serif; --display4-font: 'Golos Text', sans-serif; --display5-font: 'Golos Text', sans-serif; --display7-font: 'Golos Text', sans-serif;}

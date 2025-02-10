@@ -33,6 +33,59 @@
 
 </head>
 <body>
+  <style> 
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #fff;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-menu ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+    .navbar {
+        display: none;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+    }
+    .nav-menu.show {
+        display: block;
+    }
+}
+</style>
 <!-- Меню -->
   <header class="menu cid-uxk8jD0frN">
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
@@ -64,8 +117,36 @@
         </ul>
       </div>
     </nav>
-  </header>
-  
+  <button class="hamburger-menu" id="menuToggle">
+    ☰
+  </button>
+  <nav class="nav-menu" id="navMenu">
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="menu.html">Меню</a></li>
+        <li><a href="Booking.html">Бронирование</a></li>
+        <li><a href="Reviews.html">Отзывы</a></li>
+        <li><a href="News.html">Новости</a></li>
+        <li><a href="Contacts.html">Контакты</a></li>
+    </ul>
+</header>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("show");
+    });
+
+    // Закрытие меню при клике вне его области
+    document.addEventListener("click", function (event) {
+        if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            navMenu.classList.remove("show");
+        }
+    });
+});
+</script>
 
 <!-- Начало странички -->
 

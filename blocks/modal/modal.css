@@ -43,11 +43,12 @@
     }
   
   .modal-image {
-        max-width: 100%;
-        height: auto;
-        border-radius: 5px;
+    width: 100%;
+    height: auto;
+    max-height: 50vh; 
+    object-fit: contain; 
+    border-radius: 5px;
     }
-  
     .close {
         font-size: 20px;
         top: 10px;

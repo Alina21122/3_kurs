@@ -71,3 +71,8 @@
         padding-top: 10px;
     }
 }
+@media (max-width: 760px) {
+    .modal-image {
+        height: 40vh; /* На мобильных устройствах уменьшаем */
+    }
+}

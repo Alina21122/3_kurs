@@ -8,14 +8,14 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(255, 196, 3, 0.5); 
+  max-width: 90%; /* Окно не выходит за границы экрана */
+  max-height: 90vh; /* Не превышает высоту экрана */
+  overflow-y: auto; /* Если контент слишком длинный, появляется скролл */
 }
 @media (max-width: 768px) {
     .modal {
         width: 90%;
-        max-width: 400px;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
+        max-width: 300px;
         padding: 15px;
     }
 
@@ -63,7 +63,7 @@
     }
 
     .modal-footer {
-        display: flex;
+        display: 100%;
         justify-content: center;
         padding-top: 10px;
     }

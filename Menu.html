@@ -199,26 +199,6 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </div>
 
-<button id="openCalorieModal">Калькулятор калорий</button>
-  <!-- Модальное окно калькулятора калорий -->
-<div id="calorieModalOverlay" class="modal-overlay">
-  <div class="modal">
-      <button class="close-modal">&times;</button>
-      <h2>Калькулятор калорийности</h2>
-      <form id="calorieForm">
-          <div id="ingredients">
-              <div class="ingredient">
-                  <input type="number" class="weight" placeholder="Вес (г)" required>
-                  <input type="number" class="calories" placeholder="Ккал на 100г" required>
-              </div>
-          </div>
-          <button type="button" id="addIngredient">➕ Добавить ингредиент</button>
-          <button type="submit">Рассчитать</button>
-      </form>
-      <p>Общая калорийность: <span id="totalCalories">0</span> Ккал</p>
-  </div>
-</div>
-
 <div class="menu-section">
   <article class="menu-item">
       <a href="pizza.html">
@@ -257,7 +237,6 @@ document.addEventListener("DOMContentLoaded", function () {
       </a>
   </article>
 </div>
-
 
 <!-- Подвал-меню -->
 <footer class="footer3 cid-uxk8jD5JIm"  id="footer-6-uxk8jD5JIm">
@@ -304,51 +283,6 @@ document.addEventListener("DOMContentLoaded", function () {
   <script src="scripti.js"></script>
   <script src="formoid.min.js"></script>
   <script src="preview.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-  const calorieModal = document.getElementById("calorieModalOverlay");
-  const calorieForm = document.getElementById("calorieForm");
-  const addIngredientBtn = document.getElementById("addIngredient");
-  const totalCalories = document.getElementById("totalCalories");
-
-  // Открытие модального окна (пример: можно привязать к кнопке)
-  document.getElementById("openCalorieModal").addEventListener("click", () => {
-      calorieModal.style.display = "flex";
-  });
-
-  // Закрытие модального окна
-  document.querySelector(".close-modal").addEventListener("click", () => {
-      calorieModal.style.display = "none";
-  });
-
-  // Добавление нового ингредиента
-  addIngredientBtn.addEventListener("click", () => {
-      const ingredientDiv = document.createElement("div");
-      ingredientDiv.classList.add("ingredient");
-      ingredientDiv.innerHTML = `
-          <input type="number" class="weight" placeholder="Вес (г)" required>
-          <input type="number" class="calories" placeholder="Ккал на 100г" required>
-      `;
-      document.getElementById("ingredients").appendChild(ingredientDiv);
-  });
-
-  // Рассчёт калорийности
-  calorieForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      let total = 0;
-
-      document.querySelectorAll(".ingredient").forEach((ing) => {
-          const weight = ing.querySelector(".weight").value;
-          const calories = ing.querySelector(".calories").value;
-          if (weight && calories) {
-              total += (weight * calories) / 100;
-          }
-      });
-
-      totalCalories.textContent = total.toFixed(2);
-  });
-});
-
-  </script>
+ 
 </body>
 </html>
